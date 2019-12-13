@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1013559078034",
+    "firebase_url": "https://otel-rezervasyon-73dcf.firebaseio.com",
+    "project_id": "otel-rezervasyon-73dcf",
+    "storage_bucket": "otel-rezervasyon-73dcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013559078034:android:0988b66f9673b9550f4a4b",
+        "android_client_info": {
+          "package_name": "com.zuleyha.otelrezervasyon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013559078034-nq86u4e73rvnbn1sljmpcnr88ksgkgch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_f9mNLQh1bPCNjDkAv5AO-vK1AeUpBmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013559078034-nq86u4e73rvnbn1sljmpcnr88ksgkgch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
