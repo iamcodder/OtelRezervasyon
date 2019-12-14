@@ -1,6 +1,4 @@
-package com.zuleyha.otelrezervasyon.Model;
-
-import android.util.Log;
+package com.zuleyha.otelrezervasyon.Firebase;
 
 import androidx.annotation.NonNull;
 
@@ -9,9 +7,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.zuleyha.otelrezervasyon.Interface.FirebaseInterface;
+import com.zuleyha.otelrezervasyon.Interface.FirebaseGETInterface;
+import com.zuleyha.otelrezervasyon.Model.BosOdaSayisi;
+import com.zuleyha.otelrezervasyon.Model.Ucret;
+import com.zuleyha.otelrezervasyon.Model.ciftKisilik;
+import com.zuleyha.otelrezervasyon.Model.tekKisilik;
+import com.zuleyha.otelrezervasyon.Model.ucKisilik;
 
-public class FirebaseObj {
+public class GetFirebase {
 
     private FirebaseDatabase fdatabase;
     private DatabaseReference dReference;
@@ -23,22 +26,21 @@ public class FirebaseObj {
 
     private Ucret objUcretTek,objUcretCift,objUcretUc;
 
-    private FirebaseInterface firebaseInterface;
+    private FirebaseGETInterface firebaseGETInterface;
 
-    public FirebaseObj(FirebaseInterface firebaseInterface) {
-        this.firebaseInterface = firebaseInterface;
+    public GetFirebase(FirebaseGETInterface firebaseGETInterface) {
+        this.firebaseGETInterface = firebaseGETInterface;
         fdatabase=FirebaseDatabase.getInstance();
         dReference=fdatabase.getReference().child("Hotel");
     }
 
     //Seçilen oda için tek,çift ve üç kişilik odanın boşluk durumu
     public void fetchBosOdaSayisi(String konum){
-
         ValueEventListener postListener=new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 bosOdaSayisi=dataSnapshot.getValue(BosOdaSayisi.class);
-                firebaseInterface.bosOdaSayisi(bosOdaSayisi);
+                firebaseGETInterface.bosOdaSayisi(bosOdaSayisi);
             }
 
             @Override
@@ -58,7 +60,7 @@ public class FirebaseObj {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 objtekKisilik =dataSnapshot.getValue(tekKisilik.class);
                 if (objtekKisilik != null) {
-                    firebaseInterface.tekKisiId(objtekKisilik.getUcretId());
+                    firebaseGETInterface.tekKisiId(objtekKisilik);
                 }
             }
 
@@ -77,7 +79,7 @@ public class FirebaseObj {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 objciftKisilik=dataSnapshot.getValue(ciftKisilik.class);
                 if (objciftKisilik != null) {
-                    firebaseInterface.tekKisiId(objciftKisilik.getUcretId());
+                    firebaseGETInterface.ciftKisiId(objciftKisilik);
                 }
             }
 
@@ -96,7 +98,7 @@ public class FirebaseObj {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 objuckisilik=dataSnapshot.getValue(ucKisilik.class);
                 if (objuckisilik != null) {
-                    firebaseInterface.tekKisiId(objuckisilik.getUcretId());
+                    firebaseGETInterface.ucKisiId(objuckisilik);
                 }
             }
 
@@ -116,7 +118,7 @@ public class FirebaseObj {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 objUcretTek =dataSnapshot.getValue(Ucret.class);
                 if (objUcretTek != null) {
-                    firebaseInterface.ucretTekKisi(objUcretTek.getUcret());
+                    firebaseGETInterface.ucretTekKisi(objUcretTek.getUcret());
                 }
             }
 
@@ -135,7 +137,7 @@ public class FirebaseObj {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 objUcretCift =dataSnapshot.getValue(Ucret.class);
                 if (objUcretCift != null) {
-                    firebaseInterface.ucretCiftKisi(objUcretCift.getUcret());
+                    firebaseGETInterface.ucretCiftKisi(objUcretCift.getUcret());
                 }
             }
 
@@ -154,7 +156,7 @@ public class FirebaseObj {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 objUcretUc =dataSnapshot.getValue(Ucret.class);
                 if (objUcretUc != null) {
-                    firebaseInterface.ucretUcKisi(objUcretUc.getUcret());
+                    firebaseGETInterface.ucretUcKisi(objUcretUc.getUcret());
                 }
             }
 
@@ -166,6 +168,8 @@ public class FirebaseObj {
         dReference.child("Ucret").child(id).addValueEventListener(mpostListener);
 
     }
+
+
 
 
 }

@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.LoadingScreen"
-            android:theme="@style/TransparentCompat"
-            ></activity>
+        <activity android:name=".Activity.SuccesRezervation"></activity>
+        <activity
+            android:name=".Activity.UserInfoLoad"
+            android:theme="@style/TransparentCompat" />
+        <activity android:name=".Activity.UserInfo" />
+        <activity android:name=".Activity.ChooseRoomGen" />
+        <activity
+            android:name=".Activity.ChooseRoomTypeLoad"
+            android:theme="@style/TransparentCompat" />
         <activity android:name=".Activity.ChooseRoomType" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>

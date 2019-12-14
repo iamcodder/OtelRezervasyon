@@ -64,4 +64,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

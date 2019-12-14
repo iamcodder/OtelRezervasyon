@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.LinearLayout;
 
 import com.zuleyha.otelrezervasyon.Interface.RoomTypeInterface;
 import com.zuleyha.otelrezervasyon.Model.chooseRoomModel;
@@ -55,7 +53,7 @@ public class ChooseRoomType extends AppCompatActivity implements RoomTypeInterfa
     @Override
     public void buttonNumber(int position) {
 
-        Intent intent=new Intent(this,LoadingScreen.class);
+        Intent intent=new Intent(this, ChooseRoomTypeLoad.class);
         intent.putExtra("value",position);
         startActivity(intent);
     }
