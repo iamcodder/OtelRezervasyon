@@ -9,8 +9,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.zuleyha.otelrezervasyon.Interface.FirebaseGETInterface;
 import com.zuleyha.otelrezervasyon.Model.BosOdaSayisi;
+import com.zuleyha.otelrezervasyon.Model.Musteri;
 import com.zuleyha.otelrezervasyon.Model.Ucret;
 import com.zuleyha.otelrezervasyon.Model.ciftKisilik;
+import com.zuleyha.otelrezervasyon.Model.odaBilgileri;
+import com.zuleyha.otelrezervasyon.Model.odaTipi;
 import com.zuleyha.otelrezervasyon.Model.tekKisilik;
 import com.zuleyha.otelrezervasyon.Model.ucKisilik;
 
@@ -24,12 +27,31 @@ public class GetFirebase {
     private ciftKisilik objciftKisilik;
     private ucKisilik objuckisilik;
 
+    private Musteri musteri;
+    private boolean musteriIsFetch;
+    private odaTipi odaTipi;
+    private odaBilgileri odaBilgileri;
+
     private Ucret objUcretTek,objUcretCift,objUcretUc;
 
     private FirebaseGETInterface firebaseGETInterface;
+    private FirebaseGETInterface.Rezervasyon rezervasyon;
+    private FirebaseGETInterface.odaAktar odaAktar;
 
     public GetFirebase(FirebaseGETInterface firebaseGETInterface) {
         this.firebaseGETInterface = firebaseGETInterface;
+        fdatabase=FirebaseDatabase.getInstance();
+        dReference=fdatabase.getReference().child("Hotel");
+    }
+
+    public GetFirebase(FirebaseGETInterface.Rezervasyon rezervasyon) {
+        this.rezervasyon = rezervasyon;
+        fdatabase=FirebaseDatabase.getInstance();
+        dReference=fdatabase.getReference().child("Hotel");
+    }
+
+    public GetFirebase(FirebaseGETInterface.odaAktar odaAktar){
+        this.odaAktar=odaAktar;
         fdatabase=FirebaseDatabase.getInstance();
         dReference=fdatabase.getReference().child("Hotel");
     }
@@ -170,6 +192,65 @@ public class GetFirebase {
     }
 
 
+    public void fetchKullaniciBilgileri(String uid){
+
+        ValueEventListener mpostListener=new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                musteri =dataSnapshot.getValue(Musteri.class);
+
+                if (musteri != null) {
+                    rezervasyon.musteriAktar(musteri,true);
+                }
+                else {
+                    rezervasyon.musteriAktar(musteri,false);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        dReference.child("Rezervasyon").child(uid).addValueEventListener(mpostListener);
+    }
+
+
+
+    public void fetchOdaTipi(String konum){
+
+        ValueEventListener mpostListener=new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                odaTipi =dataSnapshot.getValue(odaTipi.class);
+                odaAktar.odaAktar(odaTipi);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        dReference.child("OdaTipi").child(konum).addValueEventListener(mpostListener);
+    }
+
+    public void fetchOdaBilgileri(String konum){
+
+        ValueEventListener mpostListener=new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                odaBilgileri =dataSnapshot.getValue(odaBilgileri.class);
+                odaAktar.odaBilgi(odaBilgileri);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        dReference.child("OdaBilgileri").child(konum).addValueEventListener(mpostListener);
+    }
 
 
 }

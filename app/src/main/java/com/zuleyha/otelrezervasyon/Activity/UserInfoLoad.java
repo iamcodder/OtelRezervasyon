@@ -29,8 +29,6 @@ public class UserInfoLoad extends AppCompatActivity implements FirebasePOSTInter
         Musteri musteri=intent.getParcelableExtra("musteri");
         BosOdaSayisi bosOdaSayisi=intent.getParcelableExtra("bosOdaSayisi");
 
-        Log.d("Sülo ",musteri.getOdaTipi());
-
         uuid = UUID.randomUUID().toString();
 
         PostFirebase firebase=new PostFirebase(this);
@@ -43,6 +41,7 @@ public class UserInfoLoad extends AppCompatActivity implements FirebasePOSTInter
     @Override
     public void isSucces(boolean isSucces, String Message) {
         if(isSucces){
+
             Toast.makeText(this,Message,Toast.LENGTH_SHORT).show();
             Intent intentt=new Intent(getApplicationContext(),SuccesRezervation.class);
             intentt.putExtra("uuid",uuid);

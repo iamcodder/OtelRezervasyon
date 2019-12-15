@@ -22,4 +22,6 @@ public class chooseRoomModel {
     public String getIcerik() {
         return icerik;
     }
+
+
 }

@@ -103,7 +103,6 @@ public class ChooseRoomTypeLoad extends AppCompatActivity implements FirebaseGET
 
     private void sayac_kontrol(){
         sayac++;
-        Log.d("Sülo say",sayac+"");
         if(sayac==8){
 
             sayac=0;

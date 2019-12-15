@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activity.showUserInfo"
+    android:background="@drawable/main_header">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--Tc kimlik-->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tc Kimlik No"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+    <TextView
+        android:id="@+id/txt_user_tc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+<!--Isim Soyisim-->
+
+    <TextView
+        android:id="@+id/textView10"
+        android:text="İsim Soyisim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_tc" />
+
+    <TextView
+        android:id="@+id/txt_user_isim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+<!--Telefon Numarası-->
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefon Numarası"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_isim" />
+
+    <TextView
+        android:id="@+id/txt_user_telefon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+<!--Email-->
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_telefon" />
+
+    <TextView
+        android:id="@+id/txt_user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+<!--Doğum Tarihi-->
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Doğum Tarihi"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_email" />
+
+    <TextView
+        android:id="@+id/txt_user_dogum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+<!--Gidiş Tarihi-->
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Otele Giriş Tarihi"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_dogum" />
+
+    <TextView
+        android:id="@+id/txt_user_gidis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+<!--Çıkış Tarihi-->
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Otelden Çıkış Tarihi"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_gidis" />
+
+    <TextView
+        android:id="@+id/txt_user_donus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+<!--Oda Tipi-->
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oda Tipi"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_donus" />
+
+    <TextView
+        android:id="@+id/txt_user_oda_tipi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+<!--Oda Genişliği-->
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oda Genişliği"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_oda_tipi" />
+
+    <TextView
+        android:id="@+id/txt_user_oda_genisligi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+<!--Ödenecek Tutar-->
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ödenecek Tutar"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_oda_genisligi" />
+
+        <TextView
+            android:id="@+id/txt_user_ucret"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline10"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05109489" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="37dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

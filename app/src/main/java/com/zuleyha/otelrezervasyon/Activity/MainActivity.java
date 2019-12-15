@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<Integer> list;
-    private ImageView img_reservation;
+    private ImageView img_reservation,img_sorgula;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.main_recycler);
         list =new ArrayList<>();
         img_reservation=findViewById(R.id.main_img_reservation);
+        img_sorgula=findViewById(R.id.main_img_reservation2);
     }
 
     private void clicked(){
@@ -45,7 +46,14 @@ public class MainActivity extends AppCompatActivity {
         img_reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ChooseRoomType.class));
+                startActivity(new Intent(getApplicationContext(), MainActivityLoad.class));
+            }
+        });
+
+        img_sorgula.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RezervasyonNumarasi.class));
             }
         });
 

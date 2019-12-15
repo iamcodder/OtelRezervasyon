@@ -31,10 +31,10 @@
 
             <ImageView
                 android:id="@+id/choose_rom_img"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/roomstudio" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/bir" />
         </androidx.cardview.widget.CardView>
 
 
@@ -117,12 +117,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/choose_rom_img2"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/roomjrsuit" />
+            <ImageView
+                android:id="@+id/choose_rom_img2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/iki" />
 
         </androidx.cardview.widget.CardView>
 
@@ -207,8 +207,8 @@
                 android:id="@+id/choose_rom_img3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/roomstudio" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/uc" />
 
         </androidx.cardview.widget.CardView>
 

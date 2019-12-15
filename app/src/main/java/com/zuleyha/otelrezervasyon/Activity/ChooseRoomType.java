@@ -1,14 +1,18 @@
 package com.zuleyha.otelrezervasyon.Activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-
+import com.zuleyha.otelrezervasyon.Firebase.GetFirebase;
+import com.zuleyha.otelrezervasyon.Interface.FirebaseGETInterface;
 import com.zuleyha.otelrezervasyon.Interface.RoomTypeInterface;
 import com.zuleyha.otelrezervasyon.Model.chooseRoomModel;
+import com.zuleyha.otelrezervasyon.Model.odaBilgileri;
+import com.zuleyha.otelrezervasyon.Model.odaTipi;
 import com.zuleyha.otelrezervasyon.R;
 import com.zuleyha.otelrezervasyon.Recycler.ChooseRoomAdapter;
 
@@ -20,6 +24,9 @@ public class ChooseRoomType extends AppCompatActivity implements RoomTypeInterfa
     private ChooseRoomAdapter adapter;
     private ArrayList<chooseRoomModel> list;
 
+    private ArrayList<String> liste1, liste2;
+    private int sayac;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,32 +36,42 @@ public class ChooseRoomType extends AppCompatActivity implements RoomTypeInterfa
         recyclerSet();
     }
 
-    private void init(){
-        recyclerView=findViewById(R.id.activity_choose_room_type_recyc);
-        list=new ArrayList<>();
+    private void init() {
+        sayac = 0;
+        recyclerView = findViewById(R.id.activity_choose_room_type_recyc);
+        list = new ArrayList<>();
+        liste1 = getIntent().getStringArrayListExtra("liste1");
+        liste2 = getIntent().getStringArrayListExtra("liste2");
+
+        getIntent().removeExtra("liste2");
+        getIntent().removeExtra("liste1");
     }
 
-    private void listAdd(){
-        list.add(new chooseRoomModel(R.drawable.roomstudio,"Studio Room","vs"));
-        list.add(new chooseRoomModel(R.drawable.roomsuite,"Suite Room","vs"));
-        list.add(new chooseRoomModel(R.drawable.roomjrsuit,"Jr Suite Room","vs"));
-        list.add(new chooseRoomModel(R.drawable.roompresidentialsuite,"Presidential Room","vs"));
-        list.add(new chooseRoomModel(R.drawable.roomfamilysuite,"Family Suite Room","vs"));
+    private void listAdd() {
+
+        list.add(new chooseRoomModel(R.drawable.roomstudio, liste1.get(0), liste2.get(0)));
+        list.add(new chooseRoomModel(R.drawable.roomsuite, liste1.get(1), liste2.get(1)));
+        list.add(new chooseRoomModel(R.drawable.roomjrsuit, liste1.get(2), liste2.get(2)));
+        list.add(new chooseRoomModel(R.drawable.roompresidentialsuite, liste1.get(3), liste2.get(3)));
+        list.add(new chooseRoomModel(R.drawable.roomfamilysuite, liste1.get(4), liste2.get(4)));
+
+
     }
 
-    private void recyclerSet(){
-        adapter=new ChooseRoomAdapter(list,this,this);
+    private void recyclerSet() {
+        adapter = new ChooseRoomAdapter(list, this, this);
         recyclerView.setAdapter(adapter);
 
-        LinearLayoutManager manager=new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
     }
 
     @Override
     public void buttonNumber(int position) {
 
-        Intent intent=new Intent(this, ChooseRoomTypeLoad.class);
-        intent.putExtra("value",position);
+        Intent intent = new Intent(this, ChooseRoomTypeLoad.class);
+        intent.putExtra("value", position);
         startActivity(intent);
     }
+
 }

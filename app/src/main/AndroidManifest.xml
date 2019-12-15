@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.RezervasyonNumarasi"></activity>
+        <activity android:name=".Activity.MainActivityLoad"
+            android:theme="@style/TransparentCompat"></activity>
+        <activity android:name=".Activity.showUserInfo" />
+        <activity
+            android:name=".Activity.RezervasyonLoad"
+            android:theme="@style/TransparentCompat" />
+        <activity
+            android:name=".Activity.RezervasyonNumarasi"
+            android:theme="@style/Theme.AppCompat.Translucent" />
         <activity android:name=".Activity.SuccesRezervation" />
         <activity
             android:name=".Activity.UserInfoLoad"
