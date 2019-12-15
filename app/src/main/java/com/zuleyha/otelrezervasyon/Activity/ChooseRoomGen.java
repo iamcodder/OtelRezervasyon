@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,7 +24,7 @@ public class ChooseRoomGen extends AppCompatActivity {
     private ucKisilik ucKisi;
     private BosOdaSayisi bosOdaSayisi;
     private ImageView img1,img2,img3;
-    private TextView txt_baslik1,txt_baslik2,txt_baslik3,txt_bosluk1,txt_bosluk2,txt_bosluk3;
+    private TextView txt_baslik1,txt_baslik2,txt_baslik3,txt_bosluk1,txt_bosluk2,txt_bosluk3,txt_ucret1,txt_ucret2,txt_ucret3;
     private Button mButton_tek,mButton_cift,mButton_uc;
     private Intent intent;
 
@@ -94,13 +93,17 @@ public class ChooseRoomGen extends AppCompatActivity {
 
     private void setData(){
         txt_baslik1.setText("Tek Kişilik Oda");
-        txt_bosluk1.setText("Boş Oda Sayısı"+bosOdaSayisi.getTek()+"\nÜcret "+ucretTekKisi);
+        txt_bosluk1.setText("Boş Oda Sayısı : "+bosOdaSayisi.getTek());
+        txt_ucret1.setText("Günlük Ücret : "+ucretTekKisi);
 
         txt_baslik2.setText("Çift Kişilik Oda");
-        txt_bosluk2.setText("Boş Oda Sayısı"+bosOdaSayisi.getCift()+"\nÜcret "+ucretCiftKisi);
+        txt_bosluk2.setText("Boş Oda Sayısı : "+bosOdaSayisi.getCift());
+        txt_ucret2.setText("Günlük Ücret : "+ucretCiftKisi);
 
         txt_baslik3.setText("Üç Kişilik Oda");
-        txt_bosluk3.setText("Boş Oda Sayısı"+bosOdaSayisi.getUc()+"\nÜcret "+ucretUcKisi);
+        txt_bosluk3.setText("Boş Oda Sayısı : "+bosOdaSayisi.getUc());
+        txt_ucret3.setText("Günlük Ücret : "+ucretUcKisi);
+
     }
 
     private void init(){
@@ -113,9 +116,13 @@ public class ChooseRoomGen extends AppCompatActivity {
         txt_baslik2=findViewById(R.id.choose_rom_txt_baslik2);
         txt_baslik3=findViewById(R.id.choose_rom_txt_baslik3);
 
-        txt_bosluk1=findViewById(R.id.choose_rom_txt_aciklama);
-        txt_bosluk2=findViewById(R.id.choose_rom_txt_aciklama2);
-        txt_bosluk3=findViewById(R.id.choose_rom_txt_aciklama3);
+        txt_bosluk1=findViewById(R.id.choose_rom_txt_aciklama10);
+        txt_bosluk2=findViewById(R.id.choose_rom_txt_aciklama20);
+        txt_bosluk3=findViewById(R.id.choose_rom_txt_aciklama30);
+
+        txt_ucret1=findViewById(R.id.choose_rom_txt_aciklama15);
+        txt_ucret2=findViewById(R.id.choose_rom_txt_aciklama25);
+        txt_ucret3=findViewById(R.id.choose_rom_txt_aciklama35);
 
         mButton_tek=findViewById(R.id.choose_rom_button);
         mButton_cift=findViewById(R.id.choose_rom_button2);

@@ -18,16 +18,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/choose_rom_img"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResim1"
             android:layout_width="150dp"
             android:layout_height="100dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/roomstudio" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/choose_rom_img"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/roomstudio" />
+        </androidx.cardview.widget.CardView>
+
+
 
         <TextView
             android:id="@+id/choose_rom_txt_baslik"
@@ -37,21 +47,36 @@
             android:layout_marginEnd="8dp"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/choose_rom_img"
-            app:layout_constraintTop_toTopOf="@+id/choose_rom_img" />
+            app:layout_constraintStart_toEndOf="@+id/cardResim1"
+            app:layout_constraintTop_toTopOf="@+id/cardResim1" />
 
         <TextView
-            android:id="@+id/choose_rom_txt_aciklama"
+            android:id="@+id/choose_rom_txt_aciklama10"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/choose_rom_img"
+            android:textSize="16sp"
+            android:text="Boş Oda Sayısı : "
+            app:layout_constraintBottom_toTopOf="@+id/choose_rom_txt_aciklama15"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/choose_rom_img"
+            app:layout_constraintStart_toEndOf="@+id/cardResim1"
             app:layout_constraintTop_toBottomOf="@+id/choose_rom_txt_baslik" />
+
+        <TextView
+            android:id="@+id/choose_rom_txt_aciklama15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Günlük Ücret : "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/cardResim1"
+            app:layout_constraintEnd_toEndOf="@+id/choose_rom_button"
+            app:layout_constraintStart_toEndOf="@+id/cardResim1" />
+
 
         <Button
             android:id="@+id/choose_rom_button"
@@ -62,9 +87,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Seç ve İlerle"
+            style="@style/Widget.MaterialComponents.Button"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/choose_rom_img" />
+            app:layout_constraintTop_toBottomOf="@+id/cardResim1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -78,15 +105,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6">
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResim2"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/choose_rom_img2"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginStart="16dp"
             android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/roomjrsuit" />
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/choose_rom_txt_baslik2"
@@ -96,21 +134,34 @@
             android:layout_marginEnd="8dp"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/choose_rom_img2"
-            app:layout_constraintTop_toTopOf="@+id/choose_rom_img2" />
+            app:layout_constraintStart_toEndOf="@+id/cardResim2"
+            app:layout_constraintTop_toTopOf="@+id/cardResim2" />
 
         <TextView
-            android:id="@+id/choose_rom_txt_aciklama2"
+            android:id="@+id/choose_rom_txt_aciklama20"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/choose_rom_img2"
+            android:text="Boş Oda Sayısı : "
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/choose_rom_txt_aciklama25"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/choose_rom_img2"
+            app:layout_constraintStart_toEndOf="@+id/cardResim2"
             app:layout_constraintTop_toBottomOf="@+id/choose_rom_txt_baslik2" />
+
+        <TextView
+            android:id="@+id/choose_rom_txt_aciklama25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Günlük Ücret : "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/cardResim2"
+            app:layout_constraintEnd_toEndOf="@+id/choose_rom_txt_aciklama20"
+            app:layout_constraintStart_toStartOf="@+id/choose_rom_txt_aciklama20" />
 
         <Button
             android:id="@+id/choose_rom_button2"
@@ -121,9 +172,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Seç ve İlerle"
+            style="@style/Widget.MaterialComponents.Button"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/choose_rom_img2" />
+            app:layout_constraintTop_toBottomOf="@+id/cardResim2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -133,20 +186,32 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline7">
 
-        <ImageView
-            android:id="@+id/choose_rom_img3"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResim3"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            android:scaleType="centerCrop"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/roomstudio" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/choose_rom_img3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/roomstudio" />
+
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/choose_rom_txt_baslik3"
@@ -156,24 +221,37 @@
             android:layout_marginEnd="8dp"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/choose_rom_img3"
-            app:layout_constraintTop_toTopOf="@+id/choose_rom_img3" />
+            app:layout_constraintStart_toEndOf="@+id/cardResim3"
+            app:layout_constraintTop_toTopOf="@+id/cardResim3" />
 
         <TextView
-            android:id="@+id/choose_rom_txt_aciklama3"
+            android:id="@+id/choose_rom_txt_aciklama30"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/choose_rom_img3"
+            android:text="Boş Oda Sayısı : "
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/choose_rom_txt_aciklama35"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/choose_rom_img3"
+            app:layout_constraintStart_toEndOf="@+id/cardResim3"
             app:layout_constraintTop_toBottomOf="@+id/choose_rom_txt_baslik3" />
+
+        <TextView
+            android:id="@+id/choose_rom_txt_aciklama35"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Günlük Ücret : "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/cardResim3"
+            app:layout_constraintEnd_toEndOf="@+id/choose_rom_button3"
+            app:layout_constraintStart_toStartOf="@+id/choose_rom_txt_aciklama30" />
 
         <Button
             android:id="@+id/choose_rom_button3"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -181,9 +259,10 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Seç ve İlerle"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/choose_rom_img3" />
+            app:layout_constraintTop_toBottomOf="@+id/cardResim3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
