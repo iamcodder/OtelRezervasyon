@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zuleyha.otelrezervasyon">
+    package="com.iamcodder.otelrezervasyon">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivityLoad"
+        <activity
+            android:name="Activity.MainActivityLoad"
             android:theme="@style/TransparentCompat"></activity>
-        <activity android:name=".Activity.showUserInfo" />
+        <activity android:name="Activity.showUserInfo" />
         <activity
             android:name=".Activity.RezervasyonLoad"
             android:theme="@style/TransparentCompat" />
